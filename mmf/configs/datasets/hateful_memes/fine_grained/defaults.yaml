@@ -1,0 +1,12 @@
+dataset_config:
+  hateful_memes:
+    zoo_requirements:
+      - hateful_memes.defaults
+      - hateful_memes.fine_grained
+    annotations:
+      train:
+      - hateful_memes/fine_grained/annotations/train.jsonl
+      val:
+      - hateful_memes/fine_grained/annotations/dev_seen.jsonl
+      test:
+      - hateful_memes/fine_grained/annotations/dev_unseen.jsonl

@@ -1,0 +1,26 @@
+includes:
+- ./multilabel.yaml
+- configs/datasets/hateful_memes/fine_grained/protected_groups.yaml
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 2e-5
+    eps: 1e-8
+
+model_config:
+  visual_bert:
+    num_labels: 7
+
+training:
+  find_unused_parameters: false
+  batch_size: 32
+  early_stop:
+    enabled: true
+    patience: 5
+    criteria: total_loss
+    minimize: true
+
+evaluation:
+  metrics:
+  - accuracy

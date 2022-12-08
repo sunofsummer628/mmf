@@ -1,0 +1,18 @@
+includes:
+- ../../../configs/visual_bert/defaults.yaml
+- configs/datasets/hateful_memes/fine_grained/with_features.yaml
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 2e-5
+    eps: 1e-8
+
+training:
+  find_unused_parameters: false
+  batch_size: 48
+  max_updates: 2000
+  early_stop:
+    enabled: true
+    patience: 5
+    criteria: hateful_memes/roc_auc

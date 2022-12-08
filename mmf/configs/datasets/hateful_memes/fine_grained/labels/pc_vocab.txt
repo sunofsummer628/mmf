@@ -1,0 +1,6 @@
+None
+religion
+race
+sex
+nationality
+disability
